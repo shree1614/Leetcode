@@ -34,16 +34,16 @@ class Solution {
 
 List<Integer> list = new ArrayList<>();
 public List<Integer> rightSideView(TreeNode root) {
-    rsv(root, 0);
+    rsv(root, list,0);
     return list;
 }
 
- public void rsv(TreeNode root, int level) {
+ public void rsv(TreeNode root,List<Integer> list, int level) {
 
      if(root==null)  return;
      if(list.size()==level) list.add(root.val);
-     rsv(root.right, level+1);
-     rsv(root.left, level+1);
+     rsv(root.right,list, level+1);
+     rsv(root.left, list, level+1);
 }
     
 } 
